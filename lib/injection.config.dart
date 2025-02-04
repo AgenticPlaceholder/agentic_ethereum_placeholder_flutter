@@ -14,6 +14,7 @@ import 'package:injectable/injectable.dart' as _i526;
 
 import 'injectable_modules.dart' as _i129;
 import 'repositories/ad_repository.dart' as _i554;
+import 'repositories/operator_repository.dart' as _i950;
 import 'services/api_service.dart' as _i905;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -32,6 +33,8 @@ _i174.GetIt $initGetIt(
   gh.singleton<_i905.ApiService>(() => _i905.ApiService(gh<_i361.Dio>()));
   gh.lazySingleton<_i554.AdRepository>(
       () => _i554.AdRepository(gh<_i905.ApiService>()));
+  gh.lazySingleton<_i950.OperatorRepository>(
+      () => _i950.OperatorRepository(gh<_i905.ApiService>()));
   return getIt;
 }
 

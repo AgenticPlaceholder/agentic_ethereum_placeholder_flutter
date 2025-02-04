@@ -1,5 +1,3 @@
-// lib/repositories/ad_repository.dart
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:multiple_result/multiple_result.dart';
