@@ -37833,7 +37833,7 @@ this.b.dG()},
 $S:7}
 A.a93.prototype={}
 A.Vb.prototype={
-$0(){var s=A.aDv("http://ec2-13-127-246-11.ap-south-1.compute.amazonaws.com:4000"),r=new A.GQ($,new A.I8(A.b([B.yU],t.i6)),$,new A.a0H(51200),!1)
+$0(){var s=A.aDv("https://placeholder.taraxio.com"),r=new A.GQ($,new A.I8(A.b([B.yU],t.i6)),$,new A.a0H(51200),!1)
 r.RT$=s
 r.RU$=new A.Wv(A.ak(t.m))
 return r},
@@ -38018,7 +38018,7 @@ return A.ah(["adId",s.a,"publisherAddress",s.b,"adTitle",s.c,"adDescription",s.d
 A.O2.prototype={}
 A.Sm.prototype={}
 A.pS.prototype={
-a_j(a){var s=this,r=null,q=A.cF("ws://ec2-13-127-246-11.ap-south-1.compute.amazonaws.com:4000"),p=new A.Gi(B.yC,new A.ei(r,r,t.EF)),o=new A.Mg(q,B.yD,B.BF,new A.ei(r,r,t.zr),p)
+a_j(a){var s=this,r=null,q=A.cF("wss://placeholder.taraxio.com"),p=new A.Gi(B.yC,new A.ei(r,r,t.EF)),o=new A.Mg(q,B.yD,B.BF,new A.ei(r,r,t.zr),p)
 o.qA()
 s.b!==$&&A.b5()
 s.b=o

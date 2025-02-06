@@ -37,7 +37,7 @@ class OperatorInfoWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("NA",
+                  Text(operatorData.name ?? "NA",
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
                   Text("Location: ${operatorData.location}",

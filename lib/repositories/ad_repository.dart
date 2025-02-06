@@ -20,7 +20,7 @@ class AdRepository {
 
   AdRepository(this.apiService) {
     final uri = Uri.parse(
-        'wss://ec2-13-127-246-11.ap-south-1.compute.amazonaws.com:4000');
+        'wss://placeholder.taraxio.com');
     const backoff = ConstantBackoff(Duration(seconds: 1));
     _socket = WebSocket(uri, backoff: backoff);
 
