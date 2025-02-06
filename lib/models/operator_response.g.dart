@@ -9,8 +9,10 @@ part of 'operator_response.dart';
 _$OperatorResponseImpl _$$OperatorResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$OperatorResponseImpl(
-      success: json['success'] as bool,
-      data: OperatorData.fromJson(json['data'] as Map<String, dynamic>),
+      success: json['success'] as bool?,
+      data: json['data'] == null
+          ? null
+          : OperatorData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$OperatorResponseImplToJson(
@@ -22,18 +24,18 @@ Map<String, dynamic> _$$OperatorResponseImplToJson(
 
 _$OperatorDataImpl _$$OperatorDataImplFromJson(Map<String, dynamic> json) =>
     _$OperatorDataImpl(
-      id: json['_id'] as String,
-      name: json['name'] as String,
-      location: json['location'] as String,
-      walletAddress: json['walletAddress'] as String,
-      timing: json['timing'] as String,
-      operatorLogo: json['operatorLogo'] as String,
-      priceRange: json['priceRange'] as String,
+      Id: json['_id'] as String?,
+      name: json['name'] as String?,
+      location: json['location'] as String?,
+      walletAddress: json['walletAddress'] as String?,
+      timing: json['timing'] as String?,
+      operatorLogo: json['operatorLogo'] as String?,
+      priceRange: json['priceRange'] as String?,
     );
 
 Map<String, dynamic> _$$OperatorDataImplToJson(_$OperatorDataImpl instance) =>
     <String, dynamic>{
-      '_id': instance.id,
+      '_id': instance.Id,
       'name': instance.name,
       'location': instance.location,
       'walletAddress': instance.walletAddress,

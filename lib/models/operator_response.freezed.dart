@@ -20,8 +20,10 @@ OperatorResponse _$OperatorResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OperatorResponse {
-  bool get success => throw _privateConstructorUsedError;
-  OperatorData get data => throw _privateConstructorUsedError;
+  @JsonKey(name: 'success')
+  bool? get success => throw _privateConstructorUsedError;
+  @JsonKey(name: 'data')
+  OperatorData? get data => throw _privateConstructorUsedError;
 
   /// Serializes this OperatorResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,9 +41,11 @@ abstract class $OperatorResponseCopyWith<$Res> {
           OperatorResponse value, $Res Function(OperatorResponse) then) =
       _$OperatorResponseCopyWithImpl<$Res, OperatorResponse>;
   @useResult
-  $Res call({bool success, OperatorData data});
+  $Res call(
+      {@JsonKey(name: 'success') bool? success,
+      @JsonKey(name: 'data') OperatorData? data});
 
-  $OperatorDataCopyWith<$Res> get data;
+  $OperatorDataCopyWith<$Res>? get data;
 }
 
 /// @nodoc
@@ -59,18 +63,18 @@ class _$OperatorResponseCopyWithImpl<$Res, $Val extends OperatorResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = null,
-    Object? data = null,
+    Object? success = freezed,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      success: null == success
+      success: freezed == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-      data: null == data
+              as bool?,
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as OperatorData,
+              as OperatorData?,
     ) as $Val);
   }
 
@@ -78,8 +82,12 @@ class _$OperatorResponseCopyWithImpl<$Res, $Val extends OperatorResponse>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $OperatorDataCopyWith<$Res> get data {
-    return $OperatorDataCopyWith<$Res>(_value.data, (value) {
+  $OperatorDataCopyWith<$Res>? get data {
+    if (_value.data == null) {
+      return null;
+    }
+
+    return $OperatorDataCopyWith<$Res>(_value.data!, (value) {
       return _then(_value.copyWith(data: value) as $Val);
     });
   }
@@ -93,10 +101,12 @@ abstract class _$$OperatorResponseImplCopyWith<$Res>
       __$$OperatorResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool success, OperatorData data});
+  $Res call(
+      {@JsonKey(name: 'success') bool? success,
+      @JsonKey(name: 'data') OperatorData? data});
 
   @override
-  $OperatorDataCopyWith<$Res> get data;
+  $OperatorDataCopyWith<$Res>? get data;
 }
 
 /// @nodoc
@@ -112,18 +122,18 @@ class __$$OperatorResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = null,
-    Object? data = null,
+    Object? success = freezed,
+    Object? data = freezed,
   }) {
     return _then(_$OperatorResponseImpl(
-      success: null == success
+      success: freezed == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-      data: null == data
+              as bool?,
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as OperatorData,
+              as OperatorData?,
     ));
   }
 }
@@ -131,15 +141,19 @@ class __$$OperatorResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$OperatorResponseImpl implements _OperatorResponse {
-  const _$OperatorResponseImpl({required this.success, required this.data});
+  const _$OperatorResponseImpl(
+      {@JsonKey(name: 'success') this.success,
+      @JsonKey(name: 'data') this.data});
 
   factory _$OperatorResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$OperatorResponseImplFromJson(json);
 
   @override
-  final bool success;
+  @JsonKey(name: 'success')
+  final bool? success;
   @override
-  final OperatorData data;
+  @JsonKey(name: 'data')
+  final OperatorData? data;
 
   @override
   String toString() {
@@ -178,16 +192,19 @@ class _$OperatorResponseImpl implements _OperatorResponse {
 
 abstract class _OperatorResponse implements OperatorResponse {
   const factory _OperatorResponse(
-      {required final bool success,
-      required final OperatorData data}) = _$OperatorResponseImpl;
+          {@JsonKey(name: 'success') final bool? success,
+          @JsonKey(name: 'data') final OperatorData? data}) =
+      _$OperatorResponseImpl;
 
   factory _OperatorResponse.fromJson(Map<String, dynamic> json) =
       _$OperatorResponseImpl.fromJson;
 
   @override
-  bool get success;
+  @JsonKey(name: 'success')
+  bool? get success;
   @override
-  OperatorData get data;
+  @JsonKey(name: 'data')
+  OperatorData? get data;
 
   /// Create a copy of OperatorResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -203,14 +220,20 @@ OperatorData _$OperatorDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OperatorData {
-  @JsonKey(name: "_id")
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
-  String get walletAddress => throw _privateConstructorUsedError;
-  String get timing => throw _privateConstructorUsedError;
-  String get operatorLogo => throw _privateConstructorUsedError;
-  String get priceRange => throw _privateConstructorUsedError;
+  @JsonKey(name: '_id')
+  String? get Id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'location')
+  String? get location => throw _privateConstructorUsedError;
+  @JsonKey(name: 'walletAddress')
+  String? get walletAddress => throw _privateConstructorUsedError;
+  @JsonKey(name: 'timing')
+  String? get timing => throw _privateConstructorUsedError;
+  @JsonKey(name: 'operatorLogo')
+  String? get operatorLogo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'priceRange')
+  String? get priceRange => throw _privateConstructorUsedError;
 
   /// Serializes this OperatorData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -229,13 +252,13 @@ abstract class $OperatorDataCopyWith<$Res> {
       _$OperatorDataCopyWithImpl<$Res, OperatorData>;
   @useResult
   $Res call(
-      {@JsonKey(name: "_id") String id,
-      String name,
-      String location,
-      String walletAddress,
-      String timing,
-      String operatorLogo,
-      String priceRange});
+      {@JsonKey(name: '_id') String? Id,
+      @JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'location') String? location,
+      @JsonKey(name: 'walletAddress') String? walletAddress,
+      @JsonKey(name: 'timing') String? timing,
+      @JsonKey(name: 'operatorLogo') String? operatorLogo,
+      @JsonKey(name: 'priceRange') String? priceRange});
 }
 
 /// @nodoc
@@ -253,43 +276,43 @@ class _$OperatorDataCopyWithImpl<$Res, $Val extends OperatorData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? location = null,
-    Object? walletAddress = null,
-    Object? timing = null,
-    Object? operatorLogo = null,
-    Object? priceRange = null,
+    Object? Id = freezed,
+    Object? name = freezed,
+    Object? location = freezed,
+    Object? walletAddress = freezed,
+    Object? timing = freezed,
+    Object? operatorLogo = freezed,
+    Object? priceRange = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+      Id: freezed == Id
+          ? _value.Id
+          : Id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
+              as String?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
-      walletAddress: null == walletAddress
+              as String?,
+      walletAddress: freezed == walletAddress
           ? _value.walletAddress
           : walletAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      timing: null == timing
+              as String?,
+      timing: freezed == timing
           ? _value.timing
           : timing // ignore: cast_nullable_to_non_nullable
-              as String,
-      operatorLogo: null == operatorLogo
+              as String?,
+      operatorLogo: freezed == operatorLogo
           ? _value.operatorLogo
           : operatorLogo // ignore: cast_nullable_to_non_nullable
-              as String,
-      priceRange: null == priceRange
+              as String?,
+      priceRange: freezed == priceRange
           ? _value.priceRange
           : priceRange // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -303,13 +326,13 @@ abstract class _$$OperatorDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "_id") String id,
-      String name,
-      String location,
-      String walletAddress,
-      String timing,
-      String operatorLogo,
-      String priceRange});
+      {@JsonKey(name: '_id') String? Id,
+      @JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'location') String? location,
+      @JsonKey(name: 'walletAddress') String? walletAddress,
+      @JsonKey(name: 'timing') String? timing,
+      @JsonKey(name: 'operatorLogo') String? operatorLogo,
+      @JsonKey(name: 'priceRange') String? priceRange});
 }
 
 /// @nodoc
@@ -325,43 +348,43 @@ class __$$OperatorDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? location = null,
-    Object? walletAddress = null,
-    Object? timing = null,
-    Object? operatorLogo = null,
-    Object? priceRange = null,
+    Object? Id = freezed,
+    Object? name = freezed,
+    Object? location = freezed,
+    Object? walletAddress = freezed,
+    Object? timing = freezed,
+    Object? operatorLogo = freezed,
+    Object? priceRange = freezed,
   }) {
     return _then(_$OperatorDataImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+      Id: freezed == Id
+          ? _value.Id
+          : Id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
+              as String?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
-      walletAddress: null == walletAddress
+              as String?,
+      walletAddress: freezed == walletAddress
           ? _value.walletAddress
           : walletAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      timing: null == timing
+              as String?,
+      timing: freezed == timing
           ? _value.timing
           : timing // ignore: cast_nullable_to_non_nullable
-              as String,
-      operatorLogo: null == operatorLogo
+              as String?,
+      operatorLogo: freezed == operatorLogo
           ? _value.operatorLogo
           : operatorLogo // ignore: cast_nullable_to_non_nullable
-              as String,
-      priceRange: null == priceRange
+              as String?,
+      priceRange: freezed == priceRange
           ? _value.priceRange
           : priceRange // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -370,36 +393,42 @@ class __$$OperatorDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OperatorDataImpl implements _OperatorData {
   const _$OperatorDataImpl(
-      {@JsonKey(name: "_id") required this.id,
-      required this.name,
-      required this.location,
-      required this.walletAddress,
-      required this.timing,
-      required this.operatorLogo,
-      required this.priceRange});
+      {@JsonKey(name: '_id') this.Id,
+      @JsonKey(name: 'name') this.name,
+      @JsonKey(name: 'location') this.location,
+      @JsonKey(name: 'walletAddress') this.walletAddress,
+      @JsonKey(name: 'timing') this.timing,
+      @JsonKey(name: 'operatorLogo') this.operatorLogo,
+      @JsonKey(name: 'priceRange') this.priceRange});
 
   factory _$OperatorDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$OperatorDataImplFromJson(json);
 
   @override
-  @JsonKey(name: "_id")
-  final String id;
+  @JsonKey(name: '_id')
+  final String? Id;
   @override
-  final String name;
+  @JsonKey(name: 'name')
+  final String? name;
   @override
-  final String location;
+  @JsonKey(name: 'location')
+  final String? location;
   @override
-  final String walletAddress;
+  @JsonKey(name: 'walletAddress')
+  final String? walletAddress;
   @override
-  final String timing;
+  @JsonKey(name: 'timing')
+  final String? timing;
   @override
-  final String operatorLogo;
+  @JsonKey(name: 'operatorLogo')
+  final String? operatorLogo;
   @override
-  final String priceRange;
+  @JsonKey(name: 'priceRange')
+  final String? priceRange;
 
   @override
   String toString() {
-    return 'OperatorData(id: $id, name: $name, location: $location, walletAddress: $walletAddress, timing: $timing, operatorLogo: $operatorLogo, priceRange: $priceRange)';
+    return 'OperatorData(Id: $Id, name: $name, location: $location, walletAddress: $walletAddress, timing: $timing, operatorLogo: $operatorLogo, priceRange: $priceRange)';
   }
 
   @override
@@ -407,7 +436,7 @@ class _$OperatorDataImpl implements _OperatorData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OperatorDataImpl &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.Id, Id) || other.Id == Id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.location, location) ||
                 other.location == location) &&
@@ -422,7 +451,7 @@ class _$OperatorDataImpl implements _OperatorData {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, location,
+  int get hashCode => Object.hash(runtimeType, Id, name, location,
       walletAddress, timing, operatorLogo, priceRange);
 
   /// Create a copy of OperatorData
@@ -443,32 +472,39 @@ class _$OperatorDataImpl implements _OperatorData {
 
 abstract class _OperatorData implements OperatorData {
   const factory _OperatorData(
-      {@JsonKey(name: "_id") required final String id,
-      required final String name,
-      required final String location,
-      required final String walletAddress,
-      required final String timing,
-      required final String operatorLogo,
-      required final String priceRange}) = _$OperatorDataImpl;
+          {@JsonKey(name: '_id') final String? Id,
+          @JsonKey(name: 'name') final String? name,
+          @JsonKey(name: 'location') final String? location,
+          @JsonKey(name: 'walletAddress') final String? walletAddress,
+          @JsonKey(name: 'timing') final String? timing,
+          @JsonKey(name: 'operatorLogo') final String? operatorLogo,
+          @JsonKey(name: 'priceRange') final String? priceRange}) =
+      _$OperatorDataImpl;
 
   factory _OperatorData.fromJson(Map<String, dynamic> json) =
       _$OperatorDataImpl.fromJson;
 
   @override
-  @JsonKey(name: "_id")
-  String get id;
+  @JsonKey(name: '_id')
+  String? get Id;
   @override
-  String get name;
+  @JsonKey(name: 'name')
+  String? get name;
   @override
-  String get location;
+  @JsonKey(name: 'location')
+  String? get location;
   @override
-  String get walletAddress;
+  @JsonKey(name: 'walletAddress')
+  String? get walletAddress;
   @override
-  String get timing;
+  @JsonKey(name: 'timing')
+  String? get timing;
   @override
-  String get operatorLogo;
+  @JsonKey(name: 'operatorLogo')
+  String? get operatorLogo;
   @override
-  String get priceRange;
+  @JsonKey(name: 'priceRange')
+  String? get priceRange;
 
   /// Create a copy of OperatorData
   /// with the given fields replaced by the non-null parameter values.
