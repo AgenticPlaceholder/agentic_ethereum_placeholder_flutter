@@ -19,8 +19,7 @@ class AdRepository {
       StreamController<SocketResponse>.broadcast();
 
   AdRepository(this.apiService) {
-    final uri = Uri.parse(
-        'wss://placeholder.taraxio.com');
+    final uri = Uri.parse('wss://placeholder.taraxio.com');
     const backoff = ConstantBackoff(Duration(seconds: 1));
     _socket = WebSocket(uri, backoff: backoff);
 

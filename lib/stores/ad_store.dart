@@ -49,7 +49,6 @@ abstract class _AdStore with Store {
   @action
   void startListeningToSocket() {
     _socketSubscription?.cancel();
-
     _socketSubscription = repository.adUpdatesStream.listen(
       (SocketResponse data) {
         // Update the observable within a MobX action

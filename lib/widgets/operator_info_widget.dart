@@ -11,7 +11,6 @@ class OperatorInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Retrieve the operator store from get_it
     final OperatorStore operatorStore = getIt<OperatorStore>();
 
     return Observer(
