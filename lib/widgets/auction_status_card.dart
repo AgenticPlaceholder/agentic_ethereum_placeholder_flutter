@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:typewritertext/typewritertext.dart';
 
-class AuctionStatusCard extends StatelessWidget {
-  final String type;
-  final String currentPrice;
-  final bool isActive;
-  final String timeRemaining;
-  final String timestamp;
+import '../injection.dart';
+import '../stores/ad_store.dart';
 
+class AuctionStatusCard extends StatelessWidget {
   const AuctionStatusCard({
     Key? key,
-    required this.type,
-    required this.currentPrice,
-    required this.isActive,
-    required this.timeRemaining,
-    required this.timestamp,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final store = getIt<AdStore>();
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(
@@ -43,7 +37,7 @@ class AuctionStatusCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            type,
+            "Auction Status",
             style: GoogleFonts.orbitron(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -51,10 +45,23 @@ class AuctionStatusCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
-          _buildInfoRow("Current Price", "\$${currentPrice}"),
-          _buildInfoRow("Active", isActive ? "Yes" : "No"),
-          _buildInfoRow("Time Remaining", "$timeRemaining sec"),
-          _buildInfoRow("Timestamp", timestamp),
+          Observer(builder: (context) {
+            var currentPrice = store.currentPrice;
+            return _buildInfoRow(
+                "Current Price", "\$${currentPrice.toString()}");
+          }),
+          Observer(builder: (context) {
+            bool isAuctionActive = store.isActive;
+            return _buildInfoRow("Active", isAuctionActive ? "Yes" : "No");
+          }),
+          Observer(builder: (context) {
+            var timeRem = store.timeRemaining;
+            return _buildInfoRow("Time Remaining", "${timeRem} sec");
+          }),
+          Observer(builder: (context) {
+            var timeStmp = store.timestamp;
+            return _buildInfoRow("Timestamp", timeStmp ?? "0");
+          }),
         ],
       ),
     );
@@ -79,10 +86,9 @@ class AuctionStatusCard extends StatelessWidget {
           ),
           Expanded(
             flex: 3,
-            child: TypeWriter.text(
+            child: Text(
               value,
-              duration: const Duration(milliseconds: 50),
-              alignment: Alignment.centerRight,
+              textAlign: TextAlign.right,
               style: GoogleFonts.robotoCondensed(
                 fontSize: 34.sp,
                 color: Colors.white70,

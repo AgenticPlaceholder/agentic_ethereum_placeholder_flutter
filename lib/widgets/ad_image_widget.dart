@@ -18,8 +18,7 @@ class AdImageWidget extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: CachedNetworkImageProvider(
-                adStore.adResponse?.data?.AdInfo?.adImage ??
-                    'https://via.placeholder.com/150',
+                adStore.adResponse?.data?.AdInfo?.adImage ?? 'https://via.placeholder.com/150',
               ),
               fit: BoxFit.cover,
             ),

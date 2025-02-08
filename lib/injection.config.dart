@@ -39,7 +39,8 @@ _i174.GetIt $initGetIt(
       () => _i554.AdRepository(gh<_i905.ApiService>()));
   gh.singleton<_i351.OperatorStore>(
       () => _i351.OperatorStore(gh<_i950.OperatorRepository>()));
-  gh.singleton<_i1017.AdStore>(() => _i1017.AdStore(gh<_i554.AdRepository>()));
+  gh.lazySingleton<_i1017.AdStore>(
+      () => _i1017.AdStore(gh<_i554.AdRepository>()));
   return getIt;
 }
 

@@ -1,21 +1,16 @@
+import 'package:agentic_ethereum_placeholder_flutter/injection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
+import '../stores/ad_store.dart';
 import 'auction_status_card.dart';
 
 /// The screen displaying the AuctionStatus with a fade-in animation.
 /// Tapping the card will re-trigger the animation.
 class AuctionStatusScreen extends StatefulWidget {
-  final String currentPrice;
-  final bool isActive;
-  final String timeRemaining;
-  final String timestamp;
 
-  const AuctionStatusScreen(
-      {Key? key,
-      required this.currentPrice,
-      required this.isActive,
-      required this.timeRemaining,
-      required this.timestamp})
+  AuctionStatusScreen(
+      {Key? key})
       : super(key: key);
 
   @override
@@ -62,13 +57,7 @@ class _AuctionStatusScreenState extends State<AuctionStatusScreen>
           children: [
             Center(
               // GestureDetector to trigger the animation when tapped.
-              child: AuctionStatusCard(
-                type: "Auction Status",
-                currentPrice: widget.currentPrice,
-                isActive: widget.isActive,
-                timeRemaining: widget.timeRemaining,
-                timestamp: widget.timestamp,
-              ),
+              child: AuctionStatusCard(),
             ),
             Container(
               margin: const EdgeInsets.only(top: 16, left: 16, right: 16),
