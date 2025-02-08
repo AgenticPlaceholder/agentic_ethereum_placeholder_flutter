@@ -154,8 +154,8 @@ class _BidPlacedExplosionScreenState extends State<BidPlacedExplosionScreen> {
           // Centered card displaying bid details.
           Center(
             child: Container(
-              height: 0.2.sh,
-              width: 0.2.sw,
+              height: 0.4.sh,
+              width: 0.9.sw,
               child: Center(
                   child: BidCard(
                 type: "Bid Placed",

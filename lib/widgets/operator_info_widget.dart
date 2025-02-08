@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../injection.dart';
 import '../stores/operator_store.dart';
@@ -27,25 +28,34 @@ class OperatorInfoWidget extends StatelessWidget {
         if (operatorData == null) return const SizedBox();
         return Row(
           children: [
-            CircleAvatar(
-              radius: 25,
-              backgroundImage: NetworkImage(operatorData.operatorLogo ??
-                  "https://via.placeholder.com/150"),
-            ),
+            // CircleAvatar(
+            //   radius: 25,
+            //   backgroundImage: NetworkImage(operatorData.operatorLogo ??
+            //       "https://via.placeholder.com/150"),
+            // ),
             const SizedBox(width: 10),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(operatorData.name ?? "NA",
-                      style: TextStyle(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white)),
+                    style: GoogleFonts.robotoCondensed(
+                      fontSize: 24.sp,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.bold,
+                    ),),
                   Text("Location: ${operatorData.location}",
-                      style: TextStyle(fontSize: 18.sp, color: Colors.white)),
+                    style: GoogleFonts.robotoCondensed(
+                      fontSize: 24.sp,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.bold,
+                    ),),
                   Text("Wallet: ${operatorData.walletAddress}",
-                      style: TextStyle(fontSize: 18.sp, color: Colors.white)),
+                    style: GoogleFonts.robotoCondensed(
+                      fontSize: 24.sp,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.bold,
+                    ),),
                   // Text("Timing: ${operatorData.timing}",
                   //     style: const TextStyle(fontSize: 12, color: Colors.white)),
                   // Text("Price: ${operatorData.priceRange}",

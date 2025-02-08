@@ -39,9 +39,9 @@ class _AdDisplayPageState extends State<AdDisplayPage> {
     adStore.startListeningToSocket();
 
     // 2. Schedule to call loadAd() every 30 seconds
-    _timer = Timer.periodic(const Duration(seconds: 30), (timer) {
-      adStore.loadAd(walletAddress);
-    });
+    // _timer = Timer.periodic(const Duration(seconds: 30), (timer) {
+    //   adStore.loadAd(walletAddress);
+    // });
   }
 
   @override

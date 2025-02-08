@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../injection.dart';
 import '../stores/ad_store.dart';
@@ -62,21 +63,28 @@ class PublisherInfoWidget extends StatelessWidget {
             //   ],
             // ),
             const SizedBox(height: 10),
+            Text("Reputation Score: ${adData.data?.publisherInfo?.reputationScore ?? "NA"}",
+              style: GoogleFonts.robotoCondensed(
+                fontSize: 34.sp,
+                color: Colors.white70,
+                fontWeight: FontWeight.bold,
+              ),),
+            Divider(color: Colors.white.withOpacity(0.5)),
             Text(adData.data?.AdInfo?.adTitle ?? "NA",
                 overflow: TextOverflow.ellipsis,
-                style:  TextStyle(
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white)),
+              style: GoogleFonts.robotoCondensed(
+                fontSize: 24.sp,
+                color: Colors.white70,
+                fontWeight: FontWeight.bold,
+              ),),
             const SizedBox(height: 5),
             Text(adData.data?.AdInfo?.adDescription?? "NA",
-                style:  TextStyle(fontSize: 16.sp, color: Colors.white)),
+              style: GoogleFonts.robotoCondensed(
+                fontSize: 24.sp,
+                color: Colors.white70,
+                fontWeight: FontWeight.bold,
+              ),),
             const SizedBox(height: 5),
-            Text("Reputation Score: ${adData.data?.publisherInfo?.reputationScore ?? "NA"}",
-                style:  TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white)),
           ],
         );
       },
