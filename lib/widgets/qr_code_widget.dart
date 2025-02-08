@@ -13,7 +13,7 @@ class QRCodeWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.network(qrUrl, width: 150, height: 150),
+        Image.network(qrUrl, width: 250, height: 250),
         const SizedBox(height: 10),
         const Text("Scan to get Wallet Address",
             textAlign: TextAlign.center),

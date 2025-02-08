@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../injection.dart';
 import '../stores/ad_store.dart';
@@ -63,17 +64,17 @@ class PublisherInfoWidget extends StatelessWidget {
             const SizedBox(height: 10),
             Text(adData.data?.AdInfo?.adTitle ?? "NA",
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                    fontSize: 22,
+                style:  TextStyle(
+                    fontSize: 22.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white)),
             const SizedBox(height: 5),
             Text(adData.data?.AdInfo?.adDescription?? "NA",
-                style: const TextStyle(fontSize: 16, color: Colors.white)),
+                style:  TextStyle(fontSize: 16.sp, color: Colors.white)),
             const SizedBox(height: 5),
             Text("Reputation Score: ${adData.data?.publisherInfo?.reputationScore ?? "NA"}",
-                style: const TextStyle(
-                    fontSize: 14,
+                style:  TextStyle(
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                     color: Colors.white)),
           ],

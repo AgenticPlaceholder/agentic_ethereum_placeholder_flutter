@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../injection.dart';
 import '../stores/operator_store.dart';
-import 'package:get_it/get_it.dart';
 
 class OperatorInfoWidget extends StatelessWidget {
   const OperatorInfoWidget({super.key});
@@ -37,12 +38,14 @@ class OperatorInfoWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(operatorData.name ?? "NA",
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                      style: TextStyle(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
                   Text("Location: ${operatorData.location}",
-                      style: const TextStyle(fontSize: 12, color: Colors.white)),
+                      style: TextStyle(fontSize: 18.sp, color: Colors.white)),
                   Text("Wallet: ${operatorData.walletAddress}",
-                      style: const TextStyle(fontSize: 12, color: Colors.white)),
+                      style: TextStyle(fontSize: 18.sp, color: Colors.white)),
                   // Text("Timing: ${operatorData.timing}",
                   //     style: const TextStyle(fontSize: 12, color: Colors.white)),
                   // Text("Price: ${operatorData.priceRange}",
