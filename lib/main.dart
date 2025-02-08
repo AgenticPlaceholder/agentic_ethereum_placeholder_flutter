@@ -1,6 +1,7 @@
 // lib/main.dart
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'injection.dart'; // Initialize DI
 import 'router.dart';
@@ -15,10 +16,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Agentic Placeholder',
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
+    return ScreenUtilInit(
+      designSize: const Size(1280, 720),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      // Use builder only if you need to use library outside ScreenUtilInit context
+      builder: (_, child) {
+        return MaterialApp.router(
+          title: 'Agentic Placeholder',
+          debugShowCheckedModeBanner: false,
+          routerConfig: router,
+        );
+      },
     );
   }
 }

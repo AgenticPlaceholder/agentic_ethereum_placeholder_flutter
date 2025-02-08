@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:typewritertext/typewritertext.dart';
 
@@ -55,7 +56,6 @@ class BidCard extends StatelessWidget {
           _buildInfoRow("Bidder", bidder),
           _buildInfoRow("Bid Amount", "\$${bidAmount}"),
           _buildInfoRow("Token ID", tokenId),
-          _buildInfoRow("Tx Hash", transactionHash),
           _buildInfoRow("Timestamp", timestamp),
         ],
       ),
@@ -72,9 +72,10 @@ class BidCard extends StatelessWidget {
             flex: 1,
             child: Text(
               label,
-              style: GoogleFonts.orbitron(
-                fontSize: 14,
+              style: GoogleFonts.robotoCondensed(
+                fontSize: 34.sp,
                 color: Colors.white70,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -84,9 +85,10 @@ class BidCard extends StatelessWidget {
               value,
               duration: const Duration(milliseconds: 50),
               alignment: Alignment.centerRight,
-              style: GoogleFonts.orbitron(
-                fontSize: 14,
+              style: GoogleFonts.robotoCondensed(
+                fontSize: 34.sp,
                 color: Colors.white70,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),

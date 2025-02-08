@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:agentic_ethereum_placeholder_flutter/models/socket_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:typewritertext/typewritertext.dart';
 
@@ -135,6 +136,28 @@ class _AdDisplayPageState extends State<AdDisplayPage> {
                   );
                 }
 
+                // return AuctionAnimationScreen(
+                //     startPrice: "100",
+                //     endPrice: "200",
+                //     startTime: "2021-10-01 12:34:56",
+                //     duration: "100",
+                //     transactionHash: "0x1234567890abcdef");
+
+                // return AuctionStatusScreen(
+                //   currentPrice: "100",
+                //   isActive: true,
+                //   timeRemaining: "100",
+                //   timestamp: "2021-10-01 12:34:56",
+                // );
+
+                // return BidPlacedExplosionScreen(
+                //   bidder: "0x1234567890abcdef",
+                //   bidAmount: "100",
+                //   tokenId: "123",
+                //   transactionHash: "0x1234567890abcdef",
+                //   timestamp: "2021-10-01 12:34:56",
+                // );
+
                 // Default UI if there is no socket response.
                 return Scaffold(
                   backgroundColor: Colors.black87,
@@ -164,9 +187,10 @@ class _AdDisplayPageState extends State<AdDisplayPage> {
                         textAlign: TextAlign.center,
                         textWidthBasis: TextWidthBasis.parent,
                         overflow: TextOverflow.visible,
-                        style: GoogleFonts.orbitron(
-                          fontSize: 34,
+                        style: GoogleFonts.robotoCondensed(
+                          fontSize: 28.sp,
                           color: Colors.white70,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
