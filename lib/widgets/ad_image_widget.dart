@@ -15,12 +15,16 @@ class AdImageWidget extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: CachedNetworkImageProvider(
-                adStore.adResponse?.data?.AdInfo?.adImage ?? 'https://via.placeholder.com/150',
-              ),
-              fit: BoxFit.cover,
+          height: 200,
+          width: double.infinity,
+          child: CachedNetworkImage(
+            imageUrl: adStore.adResponse?.data?.AdInfo?.adImage ??
+                "https://via.placeholder.com/150",
+            fit: BoxFit.cover,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Center(
+              child:
+                  CircularProgressIndicator(value: downloadProgress.progress),
             ),
           ),
         ),

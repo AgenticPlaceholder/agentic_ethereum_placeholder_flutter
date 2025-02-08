@@ -46,8 +46,8 @@ class AuctionCard extends StatelessWidget {
         children: [
           Text(
             type,
-            style: GoogleFonts.orbitron(
-              fontSize: 18,
+            style: GoogleFonts.robotoCondensed(
+              fontSize: 28.sp,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),

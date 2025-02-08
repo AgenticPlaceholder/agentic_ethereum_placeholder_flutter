@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:typewritertext/typewritertext.dart';
 
 import '../injection.dart';
 import '../stores/ad_store.dart';
@@ -38,8 +37,8 @@ class AuctionStatusCard extends StatelessWidget {
         children: [
           Text(
             "Auction Status",
-            style: GoogleFonts.orbitron(
-              fontSize: 18,
+            style: GoogleFonts.robotoCondensed(
+              fontSize: 28.sp,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),

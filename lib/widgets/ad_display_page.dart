@@ -140,33 +140,6 @@ class _AdDisplayPageState extends State<AdDisplayPage> {
             );
           }
 
-          // return Observer(
-          //   builder: (_) {
-          //     adStore.loadAd(walletAddress);
-          //     if (adStore.loading) {
-          //       return const Center(child: CircularProgressIndicator());
-          //     }
-          //     if (adStore.errorMessage != null) {
-          //       return Center(child: Text("Error: ${adStore.errorMessage}"));
-          //     }
-          //     if (adStore.adResponse == null) {
-          //       return const SizedBox.shrink();
-          //     }
-          //     return Row(
-          //       children: const [
-          //         Expanded(
-          //           flex: 3,
-          //           child: AdImageWidget(),
-          //         ),
-          //         Expanded(
-          //           flex: 1,
-          //           child: DetailsPane(),
-          //         ),
-          //       ],
-          //     );
-          //   },
-          // );
-
           // 4. Default UI if `socketResponse` is null (no event yet)
           return Scaffold(
             backgroundColor: Colors.black87,
