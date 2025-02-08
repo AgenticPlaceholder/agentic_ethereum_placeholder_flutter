@@ -136,31 +136,31 @@ class _AdDisplayPageState extends State<AdDisplayPage> {
                   );
                 }
 
-                return FutureBuilder<void>(
-                  future: adStore.loadAd(walletAddress),
-                  builder: (context, futureSnap) {
-                    if (futureSnap.connectionState ==
-                        ConnectionState.waiting) {
-                      return const Center(child: Text("Ad Loading"));
-                    }
-                    if (futureSnap.hasError) {
-                      return Center(
-                          child: Text("Error: ${futureSnap.error}"));
-                    }
-                    return Row(
-                      children: const [
-                        Expanded(
-                          flex: 3,
-                          child: AdImageWidget(),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: DetailsPane(),
-                        ),
-                      ],
-                    );
-                  },
-                );
+                // return FutureBuilder<void>(
+                //   future: adStore.loadAd(walletAddress),
+                //   builder: (context, futureSnap) {
+                //     if (futureSnap.connectionState ==
+                //         ConnectionState.waiting) {
+                //       return const Center(child: Text("Ad Loading"));
+                //     }
+                //     if (futureSnap.hasError) {
+                //       return Center(
+                //           child: Text("Error: ${futureSnap.error}"));
+                //     }
+                //     return Row(
+                //       children: const [
+                //         Expanded(
+                //           flex: 3,
+                //           child: AdImageWidget(),
+                //         ),
+                //         Expanded(
+                //           flex: 1,
+                //           child: DetailsPane(),
+                //         ),
+                //       ],
+                //     );
+                //   },
+                // );
 
                 // return AuctionAnimationScreen(
                 //     startPrice: "100",
@@ -185,43 +185,43 @@ class _AdDisplayPageState extends State<AdDisplayPage> {
                 // );
 
                 // Default UI if there is no socket response.
-                // return Scaffold(
-                //   backgroundColor: Colors.black87,
-                //   body: Container(
-                //     margin: const EdgeInsets.all(150),
-                //     decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.circular(15),
-                //       gradient: const LinearGradient(
-                //         colors: [Colors.blueAccent, Colors.purpleAccent],
-                //         begin: Alignment.topLeft,
-                //         end: Alignment.bottomRight,
-                //       ),
-                //       boxShadow: [
-                //         BoxShadow(
-                //           color: Colors.blueAccent.withOpacity(0.6),
-                //           blurRadius: 10,
-                //           spreadRadius: 2,
-                //           offset: Offset(0, 4),
-                //         )
-                //       ],
-                //     ),
-                //     child: Center(
-                //       child: TypeWriter.text(
-                //         "Waiting for the auction to start",
-                //         duration: const Duration(milliseconds: 50),
-                //         alignment: Alignment.center,
-                //         textAlign: TextAlign.center,
-                //         textWidthBasis: TextWidthBasis.parent,
-                //         overflow: TextOverflow.visible,
-                //         style: GoogleFonts.robotoCondensed(
-                //           fontSize: 28.sp,
-                //           color: Colors.white70,
-                //           fontWeight: FontWeight.bold,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // );
+                return Scaffold(
+                  backgroundColor: Colors.black87,
+                  body: Container(
+                    margin: const EdgeInsets.all(150),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      gradient: const LinearGradient(
+                        colors: [Colors.blueAccent, Colors.purpleAccent],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blueAccent.withOpacity(0.6),
+                          blurRadius: 10,
+                          spreadRadius: 2,
+                          offset: Offset(0, 4),
+                        )
+                      ],
+                    ),
+                    child: Center(
+                      child: TypeWriter.text(
+                        "Waiting for the auction to start",
+                        duration: const Duration(milliseconds: 50),
+                        alignment: Alignment.center,
+                        textAlign: TextAlign.center,
+                        textWidthBasis: TextWidthBasis.parent,
+                        overflow: TextOverflow.visible,
+                        style: GoogleFonts.robotoCondensed(
+                          fontSize: 58.sp,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
               },
             );
           }),

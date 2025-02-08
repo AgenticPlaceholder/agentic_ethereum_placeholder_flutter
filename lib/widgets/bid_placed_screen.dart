@@ -152,11 +152,7 @@ class _BidPlacedExplosionScreenState extends State<BidPlacedExplosionScreen> {
             ),
           ),
           // Centered card displaying bid details.
-          Positioned(
-            left: 0.05.sw,
-            top: 0.2.sh,
-            right: 0.05.sw,
-            bottom: 0.3.sh,
+          Center(
             child: Container(
               height: 0.2.sh,
               width: 0.2.sw,
